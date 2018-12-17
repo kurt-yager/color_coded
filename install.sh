@@ -6,12 +6,7 @@ install() {
 
 	[ -f './CMakeCache.txt' ] && rm -f 'CMakeCache.txt'
 
-	if [ -z "$*" ]
-	then
-		cmake .. -DCUSTOM_CLANG=1 -DLLVM_ROOT_DIR=/usr/include/llvm-c
-	else
-		cmake .. "$@"
-	fi
+	cmake .. 
 
 	make
 	make install
